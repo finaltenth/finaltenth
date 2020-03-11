@@ -1,0 +1,242 @@
+@import "modules/colours.scss";
+@import "partials/typography.scss";
+
+body {
+  background-color: $white;
+  color: $white;
+  padding:0;
+  margin:0;
+}
+.white {
+  color: $black;
+}
+.header-frame {
+  margin:0 auto;
+  padding-top:2em;
+  background-color: $black;
+}
+section{
+  max-width:1400px;
+  margin:0 auto;
+  padding-top:3em;
+  nav a {
+    color: $white;
+    margin-right:2em
+  }
+}
+nav {
+  margin-bottom:2em;
+}
+
+/** Repeatable elements **/
+.left {
+  float:left;
+}
+.right {
+  float:right;
+}
+.clear {
+  clear: both;
+}
+.max-width {
+  max-width: 1400px;
+  margin:0 auto;
+}
+.center {
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+/** Styling **/
+nav {
+  a {
+    color: $white;
+    font-size:1.25em ;
+    font-weight:500;
+  }
+  padding-bottom:2em;
+}
+.intro {
+  width:60%;
+  margin:0 auto;
+  float:left;
+  margin-bottom: 3em;
+  color:$white;
+  p {
+    padding-bottom:2em;
+  }
+}
+.logo {
+  width:40%;
+  float:right;
+  margin-bottom:3em;
+  img {
+    max-width: 110px;
+    float:right;
+  }
+  img:hover {
+    transform: rotate(10deg);
+    transition-timing-function: cubic-bezier(0,0,1,1);
+  }
+}
+
+
+.learning {
+
+  width:50%;
+  margin-bottom: 4rem;
+  padding-bottom:1em;
+  margin-top:2em;
+  border: 0.2em solid;
+  padding: 1.2em 2em 1.2em 2em;
+  h3, p {
+    margin-bottom: 0.1em;
+    padding-bottom: 0;
+    margin-top: 0;
+  }
+
+}
+/** Case study page **/
+
+.case-study-content {
+  width:60%;
+  float:left;
+}
+.case-study-info {
+  width:calc(30% - 6em);
+  float:right;
+  background-color: $light-grey;
+  padding:3em;
+  ul {
+    li {
+      padding-bottom:0.2em;
+      margin-bottom:0.4em;
+      a {
+        list-style-type: none;
+        margin-bottom:0.2em;
+      }
+    }
+  }
+}
+.case-header {
+  width:100%;
+  margin-bottom: 4em;
+  background-color: $black;
+  overflow:hidden;
+  img {
+    position: relative;
+    bottom:-2px;
+    height:40%;
+    width:inherit;
+    margin-top:2em;
+  }
+}
+
+footer {
+  margin-top:6em;
+  padding-top: 4em;
+  padding-bottom:4em;
+  background-color: $light-grey;
+  color: $white;
+}
+
+/** Flexbox **/
+
+.container {
+  flex-wrap: wrap;
+  flex-direction: row;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.item {
+  padding:2em;
+  background-color:$black;
+  margin-right:1em;
+  margin-bottom:1em;
+  p {
+    margin-bottom: 0.5em;
+  }
+  h3 {
+    margin-top: 0em;
+  }
+}
+.item:hover {
+    background-color: $white;
+    color:$black;
+    cursor: pointer;
+    -webkit-transition: background-color 0.5s ease;
+    -moz-transition: background-color 0.5s ease;
+    -o-transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease;
+}
+.item:nth-of-type(2n + 2){
+  margin-right: 0;
+}
+
+
+/** Responsive **/
+@media screen and (max-width: 1600px) {
+  section {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .header-frame {
+    padding-top:0em;
+  }
+  .container {
+    flex-wrap: wrap;
+    flex-direction: row;
+    display:grid;
+    grid-template-columns: 1fr;
+  }
+  .item {
+    margin-right: 0em;
+  }
+  .item:nth-of-type(2n + 2){
+    margin-right: 0em;
+  }
+  section {
+    margin-left:1em;
+    margin-right:1em;
+    padding-left:0;
+    padding-right:0;
+    .intro {
+      width:100%;
+    }
+  }
+  .learning {
+    width:calc(100% - 4.5em);
+  }
+  .case-study-content, .case-study-info {
+    width:100%;
+    float:left;
+  }
+  .case-study-info {
+    width:calc(100% - 4em);
+    padding:2em;
+  }
+
+  h1 {
+    font-size: 1.953em;
+    margin:0;
+  }
+  nav {
+    margin-bottom:0;
+    padding-bottom:3em;
+    width: auto;
+    margin:0 auto;
+  }
+  .logo {
+    float:left;
+    margin-bottom:2em;
+    margin-left:0em;
+    img {
+      float:left;
+    }
+  }
+}
